@@ -1,0 +1,16 @@
+[myfirstlsp]2024/05/05 16:35:57 main.go:17: I started
+[myfirstlsp]2024/05/05 16:35:57 main.go:115: [- .DS_Store d .git/ d .github/ - .gitignore d .ruff_cache/ - .stylua.toml - LICENSE.md - README.md d doc/ - init.lua - lazy-lock.json d lua/]
+[myfirstlsp]2024/05/05 16:35:57 main.go:40: recieved msg with method: initialize
+[myfirstlsp]2024/05/05 16:35:57 main.go:49: Connected to Neovim 0.9.5
+[myfirstlsp]2024/05/05 16:35:57 main.go:57: sent reply
+[myfirstlsp]2024/05/05 16:35:57 main.go:40: recieved msg with method: initialized
+[myfirstlsp]2024/05/05 16:35:57 main.go:40: recieved msg with method: textDocument/didOpen
+[myfirstlsp]2024/05/05 16:35:57 main.go:64: Opened: file:///Users/roberthorbury/.config/nvim/LICENSE.md
+[myfirstlsp]2024/05/05 16:35:57 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 16:35:57 state.go:40: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 16:35:57 state.go:48: LINTED RES: /Users/roberthorbury/Documents/myfirstlsp/.temp.py:1:5: E999 SyntaxError: Simple statements must be separated by newlines or semicolons
+Found 1 error.
+[myfirstlsp]2024/05/05 16:35:57 state.go:51: exit status 1
+[myfirstlsp]2024/05/05 16:35:57 state.go:56: POSITION 0
+[myfirstlsp]2024/05/05 16:35:57 state.go:60: VALUE  E999 SyntaxError  Simple statements must be separated by newlines or semicolons
+[myfirstlsp]2024/05/05 16:37:14 main.go:40: recieved msg with method: shutdown

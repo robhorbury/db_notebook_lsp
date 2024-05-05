@@ -2,6 +2,7 @@ package analysis
 
 import (
 	"bytes"
+	"fmt"
 	"log"
 	"myfirstlsp/lsp"
 	"os"
@@ -29,8 +30,11 @@ func (s *State) UpdateDocument(uri, text string) {
 func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Logger) *lsp.HoverResponse {
 
 	doc := newDocument(s.Documents[uri])
+	fileName := strings.ReplaceAll(uri, ":", "_")
+	fileName = strings.ReplaceAll(fileName, "/", "_")
+	fileName = strings.ReplaceAll(fileName, "\\", "_")
 
-	err := os.WriteFile("/Users/roberthorbury/Documents/myfirstlsp/.temp.py", []byte(doc.contents), 0644)
+	err := os.WriteFile(fmt.Sprintf("/Users/roberthorbury/Documents/myfirstlsp/.temp_%s", fileName), []byte(doc.contents), 0644)
 
 	path, err := exec.LookPath("ruff")
 	if err != nil {
@@ -43,9 +47,7 @@ func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Log
 		logger.Println(err)
 	}
 
-	res, err := getLintedResults(path, "/Users/roberthorbury/Documents/myfirstlsp/.temp.py")
-
-	logger.Printf("LINTED RES: %s", res)
+	res, err := getLintedResults(path, fmt.Sprintf("/Users/roberthorbury/Documents/myfirstlsp/.temp_%s", fileName))
 
 	if err != nil {
 		logger.Println(err)
@@ -53,11 +55,9 @@ func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Log
 
 	lineNoMessage := parseLinterMessages(res, position.Line+1, logger)
 
-	logger.Printf("POSITION %d", position.Line)
-
 	if lineNoMessage != nil {
 		value := *lineNoMessage
-		logger.Printf("VALUE %s", value)
+		logger.Printf("Errors Message: %s", value)
 
 		response := lsp.HoverResponse{
 			Response: lsp.Response{
@@ -70,7 +70,7 @@ func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Log
 		}
 		return &response
 	} else {
-		logger.Printf("VALUE WAS NIL")
+		logger.Printf("No Linter message")
 	}
 	return nil
 }
@@ -132,12 +132,13 @@ func parseLinterMessages(messages string, lineNo int, logger *log.Logger) *strin
 	}
 
 	lines := strings.Split(messages, "\n")
-	lines = remove(lines, "")
+	lines = remove(lines, ".py")
 
-	for i, line := range lines {
-		if i == len(lines)-1 {
-			return nil
-		}
+	for _, l := range lines {
+		logger.Printf("    %s", l)
+	}
+
+	for _, line := range lines {
 
 		errorMessages := strings.Split(line, ".py:")
 		errorMessage := errorMessages[len(errorMessages)-1]
@@ -160,13 +161,16 @@ func parseLinterMessages(messages string, lineNo int, logger *log.Logger) *strin
 }
 
 func remove(s []string, match string) []string {
-
+	number_of_replaces := 0
 	for i, e := range s {
-		if e == match {
-			s[i] = s[len(s)-1]
-			return s[:len(s)-1]
-
+		if !strings.Contains(e, match) {
+			number_of_replaces++
+			s[i] = s[len(s)-number_of_replaces]
 		}
+	}
+
+	if number_of_replaces > 0 {
+		return s[:len(s)-number_of_replaces]
 	}
 	return s
 }

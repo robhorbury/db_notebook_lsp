@@ -1,16 +1,129 @@
-[myfirstlsp]2024/05/05 16:35:57 main.go:17: I started
-[myfirstlsp]2024/05/05 16:35:57 main.go:115: [- .DS_Store d .git/ d .github/ - .gitignore d .ruff_cache/ - .stylua.toml - LICENSE.md - README.md d doc/ - init.lua - lazy-lock.json d lua/]
-[myfirstlsp]2024/05/05 16:35:57 main.go:40: recieved msg with method: initialize
-[myfirstlsp]2024/05/05 16:35:57 main.go:49: Connected to Neovim 0.9.5
-[myfirstlsp]2024/05/05 16:35:57 main.go:57: sent reply
-[myfirstlsp]2024/05/05 16:35:57 main.go:40: recieved msg with method: initialized
-[myfirstlsp]2024/05/05 16:35:57 main.go:40: recieved msg with method: textDocument/didOpen
-[myfirstlsp]2024/05/05 16:35:57 main.go:64: Opened: file:///Users/roberthorbury/.config/nvim/LICENSE.md
-[myfirstlsp]2024/05/05 16:35:57 main.go:40: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/05 16:35:57 state.go:40: /Users/roberthorbury/miniconda3/bin/ruff
-[myfirstlsp]2024/05/05 16:35:57 state.go:48: LINTED RES: /Users/roberthorbury/Documents/myfirstlsp/.temp.py:1:5: E999 SyntaxError: Simple statements must be separated by newlines or semicolons
-Found 1 error.
-[myfirstlsp]2024/05/05 16:35:57 state.go:51: exit status 1
-[myfirstlsp]2024/05/05 16:35:57 state.go:56: POSITION 0
-[myfirstlsp]2024/05/05 16:35:57 state.go:60: VALUE  E999 SyntaxError  Simple statements must be separated by newlines or semicolons
-[myfirstlsp]2024/05/05 16:37:14 main.go:40: recieved msg with method: shutdown
+[myfirstlsp]2024/05/05 17:22:31 main.go:17: I started
+[myfirstlsp]2024/05/05 17:22:31 main.go:115: [- .DS_Store - .dockerignore d .git/ - .gitignore d .pytest_cache/ d .ruff_cache/ d .venv/ d .vscode/ - Dockerfile - __init__.py d __pycache__/ - azure-pipelines.yml d dab_dependency_logging/ d mock_data/ - requirements.txt d sample_notebooks/ - setup.cfg d tests/]
+[myfirstlsp]2024/05/05 17:22:31 main.go:40: recieved msg with method: initialize
+[myfirstlsp]2024/05/05 17:22:31 main.go:49: Connected to Neovim 0.9.5
+[myfirstlsp]2024/05/05 17:22:31 main.go:57: sent reply
+[myfirstlsp]2024/05/05 17:22:31 main.go:40: recieved msg with method: initialized
+[myfirstlsp]2024/05/05 17:22:35 main.go:40: recieved msg with method: textDocument/didOpen
+[myfirstlsp]2024/05/05 17:22:35 main.go:64: Opened: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
+[myfirstlsp]2024/05/05 17:22:37 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:37 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:37 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:37 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:37 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:37 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:37 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:37 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:37 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:37 state.go:73: No Linter message
+[myfirstlsp]2024/05/05 17:22:38 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:38 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:38 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:38 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:38 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:38 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:38 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:38 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:38 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:38 state.go:73: No Linter message
+[myfirstlsp]2024/05/05 17:22:39 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:39 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:39 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:39 state.go:73: No Linter message
+[myfirstlsp]2024/05/05 17:22:39 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:39 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:39 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:39 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:39 state.go:60: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not True ` for false checks
+[myfirstlsp]2024/05/05 17:22:41 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:41 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:41 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:41 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:41 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:41 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:41 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:41 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:41 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:41 state.go:73: No Linter message
+[myfirstlsp]2024/05/05 17:22:42 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:42 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:42 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:42 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:42 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:42 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:42 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:42 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:42 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:42 state.go:60: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not True ` for false checks
+[myfirstlsp]2024/05/05 17:22:44 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:44 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:44 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:44 state.go:73: No Linter message
+[myfirstlsp]2024/05/05 17:22:44 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:44 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:44 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:44 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:44 state.go:60: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not True ` for false checks
+[myfirstlsp]2024/05/05 17:22:46 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:46 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:46 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:46 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:46 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:46 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:46 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:46 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:46 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:46 state.go:60: Errors Message:  F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:47 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:47 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:47 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:47 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:47 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:47 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:47 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:47 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:47 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:47 state.go:60: Errors Message:  F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:54 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:54 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:54 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:54 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:54 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:54 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:54 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:54 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:54 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:54 state.go:60: Errors Message:  F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:58 main.go:40: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/05 17:22:58 state.go:44: /Users/roberthorbury/miniconda3/bin/ruff
+[myfirstlsp]2024/05/05 17:22:58 state.go:53: exit status 1
+[myfirstlsp]2024/05/05 17:22:58 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:58 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:58 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+[myfirstlsp]2024/05/05 17:22:58 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+[myfirstlsp]2024/05/05 17:22:58 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt`
+[myfirstlsp]2024/05/05 17:22:58 state.go:138:     /Users/roberthorbury/Documents/myfirstlsp/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:22:58 state.go:60: Errors Message:  F821 Undefined name `hi`
+[myfirstlsp]2024/05/05 17:23:48 main.go:40: recieved msg with method: shutdown

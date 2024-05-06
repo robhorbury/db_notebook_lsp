@@ -3,20 +3,22 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 	"myfirstlsp/analysis"
 	"myfirstlsp/lsp"
 	"myfirstlsp/rpc"
 	"os"
+	"strings"
+
+	"golang.org/x/exp/maps"
 )
 
 func main() {
 
 	logger := getLogger("/Users/roberthorbury/Documents/myfirstlsp/log.txt")
 	logger.Println("I started")
-
-	installRuff(logger)
 
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(rpc.Split)
@@ -40,6 +42,9 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 	logger.Printf("recieved msg with method: %s", method)
 	switch method {
 	case "initialize":
+
+		createCacheDirectory(logger)
+
 		var request lsp.InitialiseRequest
 
 		if err := json.Unmarshal(contents, &request); err != nil {
@@ -63,6 +68,15 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 		}
 		logger.Printf("Opened: %s", request.Params.TextDocument.URI)
 		state.OpenDocument(request.Params.TextDocument.URI, request.Params.TextDocument.Text)
+		err := state.CacheDocument(request.Params.TextDocument.URI)
+		if err != nil {
+			logger.Printf("Error Caching: %s", err)
+		}
+
+		err = state.LintDocument(request.Params.TextDocument.URI)
+		if err != nil {
+			logger.Printf("Error Linting: %s", err)
+		}
 
 	case "textDocument/didChange":
 		var request lsp.DidChangeTextDocumentNotification
@@ -73,6 +87,17 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 
 		for _, change := range request.Params.ContentChanges {
 			state.UpdateDocument(request.Params.TextDocument.URI, change.Text)
+			err := state.CacheDocument(request.Params.TextDocument.URI)
+
+			if err != nil {
+				logger.Printf("Error Caching: %s", err)
+			}
+
+			err = state.LintDocument(request.Params.TextDocument.URI)
+			if err != nil {
+				logger.Printf("Error Linting: %s", err)
+			}
+
 		}
 
 	case "textDocument/hover":
@@ -87,6 +112,30 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 		if response != nil {
 			writeResponse(writer, response)
 		}
+
+	case "shutdown":
+		keys := maps.Keys(state.Documents)
+		filePath := analysis.GetTempPath()
+
+		for _, d := range keys {
+			fileName := analysis.GetTempFileName(d)
+
+			err := os.Remove(fmt.Sprintf("%s.temp_%s", filePath, fileName))
+
+			if err != nil {
+				logger.Printf("could not clean up file %s", fmt.Sprintf("%s.temp_%s", filePath, fileName))
+			}
+		}
+
+		pathElements := strings.Split(filePath, "/")
+
+		err := os.RemoveAll(strings.Join(pathElements[:len(pathElements)-2], "/"))
+
+		if err != nil {
+			logger.Printf("Could not delete file: %s", strings.Join(pathElements[:len(pathElements)-1], "/"))
+		}
+
+		logger.Printf("Deleted: %s", strings.Join(pathElements[:len(pathElements)-1], "/"))
 
 	}
 }
@@ -105,12 +154,35 @@ func writeResponse(writer io.Writer, msg any) {
 	writer.Write([]byte(reply))
 }
 
-func installRuff(logger *log.Logger) {
-	files, err := os.ReadDir(".")
+func createCacheDirectory(logger *log.Logger) {
+	err := os.MkdirAll("./.customLsp/.tempFiles/", os.ModePerm)
+
+	logger.Println("Creating temp folder")
 
 	if err != nil {
-		logger.Println("errro in reading dir")
+		logger.Println("Error Creating File")
 	}
 
-	logger.Println(files)
+	f, err := os.Create("./.customLsp/.gitignore")
+
+	logger.Println("Creating GitIgnore")
+
+	if err != nil {
+		logger.Println("Error Creating gitignore")
+	}
+
+	logger.Println("Writing to gitignore")
+
+	l, err := f.WriteString("*")
+	if err != nil {
+		fmt.Println(err)
+		f.Close()
+		return
+	}
+	fmt.Println(l, "bytes written successfully")
+	err = f.Close()
+
+	if err != nil {
+		logger.Println("Error Closing file")
+	}
 }

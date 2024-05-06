@@ -12,11 +12,13 @@ import (
 )
 
 type State struct {
-	Documents map[string]string
+	Documents     map[string]string
+	LinterResults map[string]string
 }
 
 func NewState() State {
-	return State{Documents: map[string]string{}}
+	return State{Documents: map[string]string{},
+		LinterResults: map[string]string{}}
 }
 
 func (s *State) OpenDocument(uri, text string) {
@@ -27,31 +29,39 @@ func (s *State) UpdateDocument(uri, text string) {
 	s.Documents[uri] = text
 }
 
-func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Logger) *lsp.HoverResponse {
+func (s *State) CacheDocument(uri string) error {
+
+	filePath := GetTempPath()
+	fileName := GetTempFileName(uri)
 
 	doc := newDocument(s.Documents[uri])
-	fileName := strings.ReplaceAll(uri, ":", "_")
-	fileName = strings.ReplaceAll(fileName, "/", "_")
-	fileName = strings.ReplaceAll(fileName, "\\", "_")
 
-	err := os.WriteFile(fmt.Sprintf("/Users/roberthorbury/Documents/myfirstlsp/.temp_%s", fileName), []byte(doc.contents), 0644)
+	err := os.WriteFile(fmt.Sprintf("%s.temp_%s", filePath, fileName), []byte(doc.contents), 0644)
 
-	path, err := exec.LookPath("ruff")
+	return err
+}
+
+func (s *State) LintDocument(uri string) error {
+	execPath, err := exec.LookPath("ruff")
 	if err != nil {
-		logger.Println("installing ruff is not  in your future")
+		return err
 	}
 
-	logger.Println(path)
+	filePath := GetTempPath()
+	fileName := GetTempFileName(uri)
+
+	linterRes, err := getLintedResults(execPath, fmt.Sprintf("%s.temp_%s", filePath, fileName))
 
 	if err != nil {
-		logger.Println(err)
+		return fmt.Errorf("Error: %s: Linter Result: %s", err, linterRes)
 	}
+	s.LinterResults[uri] = linterRes
+	return nil
+}
 
-	res, err := getLintedResults(path, fmt.Sprintf("/Users/roberthorbury/Documents/myfirstlsp/.temp_%s", fileName))
+func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Logger) *lsp.HoverResponse {
 
-	if err != nil {
-		logger.Println(err)
-	}
+	res := s.LinterResults[uri]
 
 	lineNoMessage := parseLinterMessages(res, position.Line+1, logger)
 
@@ -84,26 +94,6 @@ type document struct {
 	contents string
 }
 
-func (d *document) getLines() []string {
-	return (strings.Split(d.contents, "\n"))
-}
-
-func (d *document) getLine(id int) string {
-	return d.getLines()[id]
-}
-
-func (d *document) getHoverString(id int) string {
-	line := d.getLine(id)
-	if isLineAComment(line) {
-		return "It is a comment"
-	}
-	return "Not a comment"
-}
-
-func isLineAComment(line string) bool {
-	return strings.Contains(line, "#")
-}
-
 func getLintedResults(execPath string, id string) (string, error) {
 
 	command := exec.Command(execPath, "check", id)
@@ -120,7 +110,12 @@ func getLintedResults(execPath string, id string) (string, error) {
 		err = command.Run()
 	}
 
-	return out.String(), err
+	if fmt.Sprintf("%s", err) == "exit status 2" {
+		return out.String(), err
+
+	} else {
+		return out.String(), nil
+	}
 
 }
 
@@ -132,12 +127,12 @@ func parseLinterMessages(messages string, lineNo int, logger *log.Logger) *strin
 	}
 
 	lines := strings.Split(messages, "\n")
-	lines = remove(lines, ".py")
 
 	for _, l := range lines {
-		logger.Printf("    %s", l)
+		logger.Printf("    %s \n", l)
 	}
 
+	lines = remove(lines, ".py")
 	for _, line := range lines {
 
 		errorMessages := strings.Split(line, ".py:")

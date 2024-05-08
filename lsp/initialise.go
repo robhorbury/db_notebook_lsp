@@ -48,7 +48,7 @@ func NewInitialiseResponse(id int) InitialiseResponse {
 				HoverProvider:    true,
 				SemanticTokensProvider: SematicTokensOptions{
 					Legend: SemanticTokensLegend{
-						TokenTypes:     []string{"namespace", "property", "method"},
+						TokenTypes:     []string{"namespace", "property", "method", "string"},
 						TokenModifiers: []string{},
 					},
 					Full: true,

@@ -104,13 +104,16 @@ func (s *State) SemanticFormat(id int, uri string, logger *log.Logger) *lsp.Sema
 
 	if isDatabricksNotebook && containsSql {
 
-		var tokenList []token
 		var intList []int
+		var tokenList []token
 
 		sqlCells, cellStartLineNo := splitIntoSQLCells(doc)
 		for i, cell := range sqlCells {
-			tokenList = append(tokenList, findTokenInCell(cell, cellStartLineNo[i], logger)...)
-			tokenList = append(tokenList, CreateStringTokens(cell, "\"")...)
+			allTokenList := findTokenInCell(cell, cellStartLineNo[i], logger)
+			stringTokenList := CreateStringTokens(cell, cellStartLineNo[i], "\"", logger)
+			stringTokenList = append(stringTokenList, CreateStringTokens(cell, cellStartLineNo[i], "'", logger)...)
+			tokenList = append(tokenList, mergeTokenLists(allTokenList, stringTokenList)...)
+			//tokenList = append(tokenList, stringTokenList...)
 		}
 
 		tokenList = orderTokenList(tokenList)
@@ -133,6 +136,27 @@ func (s *State) SemanticFormat(id int, uri string, logger *log.Logger) *lsp.Sema
 	}
 	return nil
 
+}
+
+func mergeTokenLists(allTokenList, stringTokenList []token) []token {
+	var finalList []token
+	var overlap bool
+	for _, t1 := range allTokenList {
+		overlap = false
+		for _, t2 := range stringTokenList {
+			if t1.absStartIndex > t2.absStartIndex && t1.absStartIndex < t2.absStartIndex+t2.length && t1.absLineNo == t2.absLineNo {
+				overlap = true
+			}
+
+		}
+		if !overlap {
+			finalList = append(finalList, t1)
+		}
+	}
+
+	finalList = append(finalList, stringTokenList...)
+
+	return finalList
 }
 
 func intListToUint(intList []int) []uint {
@@ -200,6 +224,7 @@ func encodeTokenList(inputList []token, logger *log.Logger) []int {
 	}
 
 	for _, t := range newList {
+
 		intEncoded = append(intEncoded, []int{
 			int((*t.relativeLineNo)),
 			int(*t.relativeStartIndex),

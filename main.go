@@ -78,6 +78,8 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 			logger.Printf("Error Linting: %s", err)
 		}
 
+		state.PublishDiagnostics(request.Params.TextDocument.URI, logger)
+
 	case "textDocument/didChange":
 		var request lsp.DidChangeTextDocumentNotification
 		if err := json.Unmarshal(contents, &request); err != nil {
@@ -101,7 +103,6 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 		}
 
 	case "textDocument/semanticTokens/full":
-		logger.Println("TODO: Implement Handling:")
 		var request lsp.SemanticTokenRequest
 		if err := json.Unmarshal(contents, &request); err != nil {
 			logger.Printf("textDocument/sematicTokens/full %s", err)

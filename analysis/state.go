@@ -95,6 +95,11 @@ func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Log
 	return nil
 }
 
+func (s *State) PublishDiagnostics(uri string, logger *log.Logger) {
+	logger.Println(s.LinterResults[uri])
+
+}
+
 func (s *State) SemanticFormat(id int, uri string, logger *log.Logger) *lsp.SemanticTokenResponse {
 
 	doc := s.Documents[uri]
@@ -109,15 +114,10 @@ func (s *State) SemanticFormat(id int, uri string, logger *log.Logger) *lsp.Sema
 
 		sqlCells, cellStartLineNo := splitIntoSQLCells(doc)
 		for i, cell := range sqlCells {
-			logger.Println(1)
+
 			allTokenList := findTokenInCell(cell, cellStartLineNo[i], logger)
-			logger.Println(2)
 			stringTokenList := CreateStringTokens(cell, cellStartLineNo[i], "\"", logger)
-			logger.Println(3)
-			stringTokenList = append(stringTokenList, CreateStringTokens(cell, cellStartLineNo[i], "'", logger)...)
-			logger.Println(4)
 			tokenList = append(tokenList, mergeTokenLists(allTokenList, stringTokenList)...)
-			logger.Println(5)
 			//tokenList = append(tokenList, stringTokenList...)
 		}
 
@@ -220,11 +220,9 @@ func encodeTokenList(inputList []token, logger *log.Logger) []int {
 	prevLineNo := 0
 	prevStartIndex := 0
 	for _, t := range inputList {
-		logger.Printf("Going into encoding: %d %d", t.absLineNo, t.absStartIndex)
 		prevLineNo, prevStartIndex = encodeToken(&t, prevLineNo, prevStartIndex)
 
 		newList = append(newList, t)
-		logger.Printf("After encoding: %d %d", *t.relativeLineNo, *t.relativeStartIndex)
 
 	}
 
@@ -374,10 +372,6 @@ func parseLinterMessages(messages string, lineNo int, logger *log.Logger) *strin
 	}
 
 	lines := strings.Split(messages, "\n")
-
-	for _, l := range lines {
-		logger.Printf("    %s \n", l)
-	}
 
 	lines = remove(lines, ".py")
 	for _, line := range lines {

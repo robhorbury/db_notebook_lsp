@@ -109,10 +109,15 @@ func (s *State) SemanticFormat(id int, uri string, logger *log.Logger) *lsp.Sema
 
 		sqlCells, cellStartLineNo := splitIntoSQLCells(doc)
 		for i, cell := range sqlCells {
+			logger.Println(1)
 			allTokenList := findTokenInCell(cell, cellStartLineNo[i], logger)
+			logger.Println(2)
 			stringTokenList := CreateStringTokens(cell, cellStartLineNo[i], "\"", logger)
+			logger.Println(3)
 			stringTokenList = append(stringTokenList, CreateStringTokens(cell, cellStartLineNo[i], "'", logger)...)
+			logger.Println(4)
 			tokenList = append(tokenList, mergeTokenLists(allTokenList, stringTokenList)...)
+			logger.Println(5)
 			//tokenList = append(tokenList, stringTokenList...)
 		}
 

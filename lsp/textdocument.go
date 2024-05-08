@@ -21,6 +21,10 @@ type TextDocumentPositionParams struct {
 	Position     Position               `json:"position"`
 }
 
+type TextDocumentSemanticTokenParams struct {
+	TextDocument TextDocumentIdentifier `json:"textDocument"`
+}
+
 type Position struct {
 	Line      int `json:"line"`
 	Character int `json:"character"`

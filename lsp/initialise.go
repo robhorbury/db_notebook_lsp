@@ -26,9 +26,9 @@ type InitialiseResult struct {
 }
 
 type ServerCapabilities struct {
-	TextDocumentSync int `json:"textDocumentSync"`
-
-	HoverProvider bool `json:"hoverProvider"`
+	TextDocumentSync       int                  `json:"textDocumentSync"`
+	HoverProvider          bool                 `json:"hoverProvider"`
+	SemanticTokensProvider SematicTokensOptions `json:"semanticTokensProvider"`
 }
 
 type ServerInfo struct {
@@ -46,6 +46,13 @@ func NewInitialiseResponse(id int) InitialiseResponse {
 			Capabilities: ServerCapabilities{
 				TextDocumentSync: 1,
 				HoverProvider:    true,
+				SemanticTokensProvider: SematicTokensOptions{
+					Legend: SemanticTokensLegend{
+						TokenTypes:     []string{"namespace", "property", "method"},
+						TokenModifiers: []string{},
+					},
+					Full: true,
+				},
 			},
 			ServerInfo: ServerInfo{
 				Name:    "myfirstlsp",

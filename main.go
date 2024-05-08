@@ -100,6 +100,20 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 
 		}
 
+	case "textDocument/semanticTokens/full":
+		logger.Println("TODO: Implement Handling:")
+		var request lsp.SemanticTokenRequest
+		if err := json.Unmarshal(contents, &request); err != nil {
+			logger.Printf("textDocument/sematicTokens/full %s", err)
+		}
+
+		response := state.SemanticFormat(request.ID, request.Params.TextDocument.URI, logger)
+
+		if response != nil {
+			writeResponse(writer, response)
+			logger.Printf("Responded : %s", *response)
+		}
+
 	case "textDocument/hover":
 		var request lsp.HoverRequest
 		if err := json.Unmarshal(contents, &request); err != nil {

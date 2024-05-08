@@ -7,9 +7,19 @@ import (
 	"myfirstlsp/lsp"
 	"os"
 	"os/exec"
+	"sort"
 	"strconv"
 	"strings"
 )
+
+func newDocument(contents string) *document {
+	doc := document{contents: contents}
+	return &doc
+}
+
+type document struct {
+	contents string
+}
 
 type State struct {
 	Documents     map[string]string
@@ -85,13 +95,219 @@ func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Log
 	return nil
 }
 
-func newDocument(contents string) *document {
-	doc := document{contents: contents}
-	return &doc
+func (s *State) SemanticFormat(id int, uri string, logger *log.Logger) *lsp.SemanticTokenResponse {
+
+	doc := s.Documents[uri]
+
+	isDatabricksNotebook := strings.Contains(strings.ToLower(doc), "# databricks notebook source")
+	containsSql := strings.Contains(strings.ToLower(doc), "# magic %sql")
+
+	if isDatabricksNotebook && containsSql {
+
+		var tokenList []token
+		var intList []int
+
+		sqlCells, cellStartLineNo := splitIntoSQLCells(doc)
+		for i, cell := range sqlCells {
+			tokenList = append(tokenList, findTokenInCell(cell, cellStartLineNo[i], logger)...)
+		}
+
+		tokenList = orderTokenList(tokenList)
+		intList = append(intList, encodeTokenList(tokenList, logger)...)
+
+		response := lsp.SemanticTokenResponse{
+			Response: lsp.Response{
+				RPC: "2.0",
+				ID:  &id,
+			},
+
+			Result: lsp.SemanticTokenResult{
+				Data: intListToUint(intList),
+			},
+		}
+
+		return &response
+	} else {
+		logger.Println("Not a notebook and doesn't contain sql")
+	}
+	return nil
+
 }
 
-type document struct {
-	contents string
+func intListToUint(intList []int) []uint {
+	var newList []uint
+
+	for _, i := range intList {
+		newList = append(newList, uint(i))
+	}
+	return newList
+
+}
+
+type token struct {
+	tokenValue         string
+	absLineNo          int
+	absStartIndex      int
+	length             int
+	relativeLineNo     *int
+	relativeStartIndex *int
+	tokenType          *int
+	tokenModifiers     *int // TODO: make this generic
+}
+
+func findTokenInCell(cell string, startLineNo int, logger *log.Logger) []token {
+	var tokenList []token
+
+	cells := splitCellIntoLines(cell)
+
+	for i, line := range cells {
+		tokenList = append(tokenList,
+			findTokenInLine(line, i+startLineNo, logger)...,
+		)
+	}
+	return tokenList
+}
+
+func orderTokenList(inputList []token) []token {
+	sort.Slice(inputList, func(i, j int) bool {
+		if inputList[i].absLineNo != inputList[j].absLineNo {
+
+			return inputList[i].absLineNo < inputList[j].absLineNo
+		} else {
+			return inputList[i].absStartIndex < inputList[j].absStartIndex
+		}
+	})
+
+	return inputList
+
+}
+
+func encodeTokenList(inputList []token, logger *log.Logger) []int {
+
+	var newList []token
+	var intEncoded []int
+
+	prevLineNo := 0
+	prevStartIndex := 0
+	for _, t := range inputList {
+		logger.Printf("Going into encoding: %d %d", t.absLineNo, t.absStartIndex)
+		prevLineNo, prevStartIndex = encodeToken(&t, prevLineNo, prevStartIndex)
+
+		newList = append(newList, t)
+		logger.Printf("After encoding: %d %d", *t.relativeLineNo, *t.relativeStartIndex)
+
+	}
+
+	for _, t := range newList {
+		intEncoded = append(intEncoded, []int{
+			int((*t.relativeLineNo)),
+			int(*t.relativeStartIndex),
+			int(t.length),
+			int(*t.tokenType),
+			int(*t.tokenModifiers)}...)
+
+	}
+
+	return intEncoded
+
+}
+
+func encodeToken(t *token, prevLineNo int, prevStartIndex int) (int, int) {
+
+	if prevLineNo == t.absLineNo {
+		relLineNo := 0
+		relStartIndex := t.absStartIndex - prevStartIndex
+
+		t.relativeLineNo = &relLineNo
+		t.relativeStartIndex = &(relStartIndex)
+	} else {
+		relLineNo := t.absLineNo - prevLineNo
+		t.relativeLineNo = &relLineNo
+		startIndex := t.absStartIndex
+		t.relativeStartIndex = &(startIndex)
+	}
+
+	word := strings.ReplaceAll(t.tokenValue, "(", "")
+	word = strings.ReplaceAll(word, ")", "")
+
+	if inList(word, GetSqlTokens()) {
+		sqlTokenType := 1
+		t.tokenType = &sqlTokenType
+	} else if inList(word, GetSqlFunctions()) {
+		sqlTokenType := 2
+		t.tokenType = &sqlTokenType
+	}
+
+	return t.absLineNo, t.absStartIndex
+
+}
+
+func findTokenInLine(line string, lineNo int, logger *log.Logger) []token {
+
+	var tokenList []token
+
+	words := SplitStringWithPosition(line)
+
+	for word, positions := range words {
+		if word != "spaces" && word != "#" && word != "magic" {
+
+			defaultTokentype := 0
+			defaultTokenModifiers := 0
+
+			for _, position := range positions {
+
+				tokenList = append(tokenList,
+					token{
+						tokenValue:     word,
+						absLineNo:      lineNo - 1,
+						absStartIndex:  position,
+						length:         len(word),
+						tokenType:      &defaultTokentype,
+						tokenModifiers: &defaultTokenModifiers,
+					})
+			}
+
+		}
+	}
+	return tokenList
+}
+
+func splitCellIntoLines(cell string) []string {
+	lines := strings.Split(cell, "\n")
+	return lines
+}
+
+func splitIntoSQLCells(doc string) ([]string, []int) {
+	allCells := strings.Split(strings.ToLower(doc), "# command ----------")
+
+	var sqlCells []string
+	var numberSqlCellLines []int
+	var numberCellLines []int
+
+	for _, cell := range allCells {
+		lines := splitCellIntoLines(cell)
+		numberCellLines = append(numberCellLines, len(lines))
+	}
+
+	for i, cell := range allCells {
+
+		if strings.Contains(cell, "# magic %sql") {
+			sqlCells = append(sqlCells, cell)
+			numberSqlCellLines = append(numberSqlCellLines, sum(numberCellLines[:i]))
+
+		}
+	}
+	return sqlCells, numberSqlCellLines
+}
+
+func sum(nums []int) int {
+	total := 0
+
+	for _, num := range nums {
+		total += num
+	}
+
+	return total
 }
 
 func getLintedResults(execPath string, id string) (string, error) {
@@ -168,4 +384,22 @@ func remove(s []string, match string) []string {
 		return s[:len(s)-number_of_replaces]
 	}
 	return s
+}
+
+func inList(s string, l []string) bool {
+	for _, e := range l {
+		if s == e {
+			return true
+		}
+	}
+	return false
+}
+
+func inListInt(s int, l []int) bool {
+	for _, e := range l {
+		if s == e {
+			return true
+		}
+	}
+	return false
 }

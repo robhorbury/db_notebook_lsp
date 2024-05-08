@@ -1,171 +1,223 @@
-[myfirstlsp]2024/05/06 18:08:00 main.go:21: I started
-[myfirstlsp]2024/05/06 18:08:00 main.go:42: recieved msg with method: initialize
-[myfirstlsp]2024/05/06 18:08:00 main.go:160: Creating temp folder
-[myfirstlsp]2024/05/06 18:08:00 main.go:168: Creating GitIgnore
-[myfirstlsp]2024/05/06 18:08:00 main.go:174: Writing to gitignore
-[myfirstlsp]2024/05/06 18:08:00 main.go:54: Connected to Neovim 0.9.5
-[myfirstlsp]2024/05/06 18:08:00 main.go:62: sent reply
-[myfirstlsp]2024/05/06 18:08:00 main.go:42: recieved msg with method: initialized
-[myfirstlsp]2024/05/06 18:08:06 main.go:42: recieved msg with method: textDocument/didOpen
-[myfirstlsp]2024/05/06 18:08:06 main.go:69: Opened: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:09 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:     Found 6 errors. 
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:09 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:09 state.go:70: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not True ` for false checks
-[myfirstlsp]2024/05/06 18:08:11 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:     Found 6 errors. 
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:11 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:11 state.go:70: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not True ` for false checks
-[myfirstlsp]2024/05/06 18:08:12 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     Found 6 errors. 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:12 state.go:70: Errors Message:  F821 Undefined name `prnt`
-[myfirstlsp]2024/05/06 18:08:12 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     Found 6 errors. 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:12 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:12 state.go:70: Errors Message:  F821 Undefined name `hi`
-[myfirstlsp]2024/05/06 18:08:26 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:26 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:27 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:27 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:27 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:27 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:27 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:27 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:27 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:27 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:28 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:28 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:29 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:29 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:30 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:30 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:30 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:30 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:31 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:31 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:31 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:31 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:31 main.go:42: recieved msg with method: textDocument/didChange
-[myfirstlsp]2024/05/06 18:08:31 main.go:86: Changed: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
-[myfirstlsp]2024/05/06 18:08:33 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:1: F821 Undefined name `pant` 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:6: F821 Undefined name `ih` 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     Found 8 errors. 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:33 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:33 state.go:70: Errors Message:  F821 Undefined name `pant`
-[myfirstlsp]2024/05/06 18:08:39 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:1: F821 Undefined name `pant` 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:6: F821 Undefined name `ih` 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     Found 8 errors. 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:39 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:39 state.go:70: Errors Message:  F821 Undefined name `pant`
-[myfirstlsp]2024/05/06 18:08:42 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:1: F821 Undefined name `pant` 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:6: F821 Undefined name `ih` 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     Found 8 errors. 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:42 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:42 state.go:70: Errors Message:  F821 Undefined name `hi`
-[myfirstlsp]2024/05/06 18:08:46 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:1: F821 Undefined name `pant` 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:6: F821 Undefined name `ih` 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     Found 8 errors. 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:46 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:46 state.go:70: Errors Message:  F821 Undefined name `prnt`
-[myfirstlsp]2024/05/06 18:08:47 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:1: F821 Undefined name `pant` 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:6: F821 Undefined name `ih` 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     Found 8 errors. 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:47 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:47 state.go:70: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not True ` for false checks
-[myfirstlsp]2024/05/06 18:08:49 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:1: F821 Undefined name `pant` 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:6: F821 Undefined name `ih` 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     Found 8 errors. 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:49 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:49 state.go:83: No Linter message
-[myfirstlsp]2024/05/06 18:08:50 main.go:42: recieved msg with method: textDocument/hover
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:9:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:12:1: F821 Undefined name `prnt` 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:13:7: F821 Undefined name `hi` 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:1: F821 Undefined name `pant` 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:15:6: F821 Undefined name `ih` 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     Found 8 errors. 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:     No fixes available (4 hidden fixes can be enabled with the `--unsafe-fixes` option). 
-[myfirstlsp]2024/05/06 18:08:50 state.go:132:      
-[myfirstlsp]2024/05/06 18:08:50 state.go:70: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not True ` for false checks
-[myfirstlsp]2024/05/06 18:09:07 main.go:42: recieved msg with method: shutdown
-[myfirstlsp]2024/05/06 18:09:07 main.go:138: Deleted: ./.customLsp/.tempFiles
+[myfirstlsp]2024/05/08 14:57:36 main.go:21: I started
+[myfirstlsp]2024/05/08 14:57:36 main.go:42: recieved msg with method: initialize
+[myfirstlsp]2024/05/08 14:57:36 main.go:174: Creating temp folder
+[myfirstlsp]2024/05/08 14:57:36 main.go:182: Creating GitIgnore
+[myfirstlsp]2024/05/08 14:57:36 main.go:188: Writing to gitignore
+[myfirstlsp]2024/05/08 14:57:36 main.go:54: Connected to Neovim 0.9.5
+[myfirstlsp]2024/05/08 14:57:36 main.go:62: sent reply
+[myfirstlsp]2024/05/08 14:57:36 main.go:42: recieved msg with method: initialized
+[myfirstlsp]2024/05/08 14:57:36 main.go:42: recieved msg with method: textDocument/didOpen
+[myfirstlsp]2024/05/08 14:57:36 main.go:69: Opened: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
+[myfirstlsp]2024/05/08 14:57:36 main.go:42: recieved msg with method: textDocument/semanticTokens/full
+[myfirstlsp]2024/05/08 14:57:36 main.go:104: TODO: Implement Handling:
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 8 8
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 8 8
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 9 8
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 1 8
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 9 15
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 7
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 9 22
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 7
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 9 24
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 2
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 9 29
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 5
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 10 8
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 1 8
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 10 15
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 7
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 8
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 1 8
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 17
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 9
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 23
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 6
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 32
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 9
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 39
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 7
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 48
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 9
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 54
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 6
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 59
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 5
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 64
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 5
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 69
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 5
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 74
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 5
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 77
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 3
+[myfirstlsp]2024/05/08 14:57:36 state.go:193: Going into encoding: 11 82
+[myfirstlsp]2024/05/08 14:57:36 state.go:197: After encoding: 0 5
+[myfirstlsp]2024/05/08 14:57:36 main.go:114: Responded : {{2.0 %!s(*int=0x1400009eed0)} {[%!s(uint=8) %!s(uint=8) %!s(uint=4) %!s(uint=0) %!s(uint=0) %!s(uint=1) %!s(uint=8) %!s(uint=6) %!s(uint=1) %!s(uint=0) %!s(uint=0) %!s(uint=7) %!s(uint=6) %!s(uint=1) %!s(uint=0) %!s(uint=0) %!s(uint=7) %!s(uint=1) %!s(uint=2) %!s(uint=0) %!s(uint=0) %!s(uint=2) %!s(uint=4) %!s(uint=1) %!s(uint=0) %!s(uint=0) %!s(uint=5) %!s(uint=5) %!s(uint=1) %!s(uint=0) %!s(uint=1) %!s(uint=8) %!s(uint=6) %!s(uint=1) %!s(uint=0) %!s(uint=0) %!s(uint=7) %!s(uint=31) %!s(uint=0) %!s(uint=0) %!s(uint=1) %!s(uint=8) %!s(uint=8) %!s(uint=1) %!s(uint=0) %!s(uint=0) %!s(uint=9) %!s(uint=5) %!s(uint=1) %!s(uint=0) %!s(uint=0) %!s(uint=6) %!s(uint=8) %!s(uint=0) %!s(uint=0) %!s(uint=0) %!s(uint=9) %!s(uint=6) %!s(uint=1) %!s(uint=0) %!s(uint=0) %!s(uint=7) %!s(uint=8) %!s(uint=2) %!s(uint=0) %!s(uint=0) %!s(uint=9) %!s(uint=5) %!s(uint=0) %!s(uint=0) %!s(uint=0) %!s(uint=6) %!s(uint=4) %!s(uint=0) %!s(uint=0) %!s(uint=0) %!s(uint=5) %!s(uint=4) %!s(uint=0) %!s(uint=0) %!s(uint=0) %!s(uint=5) %!s(uint=4) %!s(uint=0) %!s(uint=0) %!s(uint=0) %!s(uint=5) %!s(uint=4) %!s(uint=0) %!s(uint=0) %!s(uint=0) %!s(uint=5) %!s(uint=2) %!s(uint=2) %!s(uint=0) %!s(uint=0) %!s(uint=3) %!s(uint=4) %!s(uint=2) %!s(uint=0) %!s(uint=0) %!s(uint=5) %!s(uint=5) %!s(uint=0) %!s(uint=0)]}}
+[myfirstlsp]2024/05/08 15:03:34 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:03:34 state.go:348:      
+[myfirstlsp]2024/05/08 15:03:34 state.go:80: Errors Message:  F821 Undefined name `e`
+[myfirstlsp]2024/05/08 15:03:36 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:03:36 state.go:348:      
+[myfirstlsp]2024/05/08 15:03:36 state.go:80: Errors Message:  F821 Undefined name `e`
+[myfirstlsp]2024/05/08 15:03:37 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:03:37 state.go:348:      
+[myfirstlsp]2024/05/08 15:03:37 state.go:80: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not Tru ` for false checks
+[myfirstlsp]2024/05/08 15:03:41 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:03:41 state.go:348:      
+[myfirstlsp]2024/05/08 15:03:41 state.go:80: Errors Message:  F821 Undefined name `prnt`
+[myfirstlsp]2024/05/08 15:03:52 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:03:52 state.go:348:      
+[myfirstlsp]2024/05/08 15:03:52 state.go:80: Errors Message:  F821 Undefined name `hi`
+[myfirstlsp]2024/05/08 15:04:02 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:02 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:02 state.go:80: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not Tru ` for false checks
+[myfirstlsp]2024/05/08 15:04:03 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:03 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:03 state.go:80: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not Tru ` for false checks
+[myfirstlsp]2024/05/08 15:04:09 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:09 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:09 state.go:93: No Linter message
+[myfirstlsp]2024/05/08 15:04:10 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:10 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:10 state.go:93: No Linter message
+[myfirstlsp]2024/05/08 15:04:11 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:11 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:11 state.go:93: No Linter message
+[myfirstlsp]2024/05/08 15:04:13 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:13 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:13 state.go:80: Errors Message:  E712 Avoid equality comparisons to `False`; use `if not True ` for false checks
+[myfirstlsp]2024/05/08 15:04:14 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:14 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:14 state.go:93: No Linter message
+[myfirstlsp]2024/05/08 15:04:15 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:15 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:15 state.go:93: No Linter message
+[myfirstlsp]2024/05/08 15:04:16 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:4:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:12: E712 Avoid equality comparisons to `False`; use `if not Tru:` for false checks 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:20:21: F821 Undefined name `Tru` 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:21:5: F821 Undefined name `e` 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:24:1: F821 Undefined name `prnt` 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:25:7: F821 Undefined name `hi` 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     Found 7 errors. 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:     No fixes available (3 hidden fixes can be enabled with the `--unsafe-fixes` option). 
+[myfirstlsp]2024/05/08 15:04:16 state.go:348:      
+[myfirstlsp]2024/05/08 15:04:16 state.go:93: No Linter message

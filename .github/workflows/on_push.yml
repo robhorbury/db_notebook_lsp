@@ -46,7 +46,7 @@ jobs:
 
     - name: BuildWindows
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
-      continue-on-error: true
+      continue-on-error: true.
 
 
     - name: MoveFile

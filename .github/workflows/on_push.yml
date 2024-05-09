@@ -26,10 +26,17 @@ jobs:
         go-version: '1.21.6'
 
     - name: BuildMac
-      run: env GOOS=darwin GOARCH=amd64 go build ./main.go -o "./build/mac/"
+      run: env GOOS=darwin GOARCH=amd64 go build ./main.go
+
+    - name: MoveFile
+      run: mv main.go build/mac
 
     - name: BuildWindows
-      run: env GOOS=windows GOARCH=amd64 go build ./main.go -o "./build/windows/"
+      run: env GOOS=windows GOARCH=amd64 go build ./main.go
+
+    - name: MoveFile
+      run: mv main.go build/windows
+
 
     - name: setup git config
       run: |

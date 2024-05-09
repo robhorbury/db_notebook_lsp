@@ -1,0 +1,52 @@
+name: Build and run dependency logger
+
+on: push
+permissions:
+  contents: write
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Extract branch name
+      shell: bash
+      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      id: extract_branch
+
+    - name: Print brach
+      run: echo "${{ steps.extract_branch.outputs.branch }}"
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21.6'
+
+    - name: Build
+      run: go build ./main.go
+
+    - name: setup git config
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+
+    - name: Commit files # commit the output folder
+      run: |
+        git add .
+        git commit -m "Added built go files"
+        git push origin ${{ steps.extract_branch.outputs.branch }}
+
+    - name: Make binary executable
+      run: chmod +x ./db_dependency_logger
+
+    - name: Log Dependencies
+      run: ./db_dependency_logger 
+
+    - name: Commit files # commit the output folder
+      run: |
+        git add .
+        git commit -m "Automatically updated Databricks dependencies" || exit 0
+        git push origin ${{ steps.extract_branch.outputs.branch }}

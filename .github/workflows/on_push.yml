@@ -17,6 +17,12 @@ jobs:
       run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
       id: extract_branch
 
+    - name: setup git config
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+
+
     - name: Print brach
       run: echo "${{ steps.extract_branch.outputs.branch }}"
 
@@ -31,6 +37,13 @@ jobs:
     - name: MoveFile
       run: mv ./main ./build/mac
 
+    - name: Commit files # commit the output folder
+      run: |
+        git add .
+        git commit -m "Added built mac go files"
+        git push origin ${{ steps.extract_branch.outputs.branch }}
+
+
     - name: BuildWindows
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
 
@@ -38,15 +51,11 @@ jobs:
       run: mv ./main ./build/windows
 
 
-    - name: setup git config
-      run: |
-        git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
-
+    
     - name: Commit files # commit the output folder
       run: |
         git add .
-        git commit -m "Added built go files"
+        git commit -m "Added built windows go files"
         git push origin ${{ steps.extract_branch.outputs.branch }}
 
 

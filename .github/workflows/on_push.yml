@@ -48,9 +48,7 @@ jobs:
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
 
     - name: MoveFile
-      run: mv ./main ./build/windows
-
-
+      run: mv ./main.exe ./build/windows
     
     - name: Commit files # commit the output folder
       run: |

@@ -6,3 +6,5 @@
 [myfirstlsp]2024/05/10 00:45:39 main.go:54: Connected to Neovim 0.9.5
 [myfirstlsp]2024/05/10 00:45:39 main.go:62: sent reply
 [myfirstlsp]2024/05/10 00:45:39 main.go:42: recieved msg with method: initialized
+[myfirstlsp]2024/05/10 00:49:12 main.go:42: recieved msg with method: shutdown
+[myfirstlsp]2024/05/10 00:49:12 main.go:158: Deleted: ./.customLsp/.tempFiles

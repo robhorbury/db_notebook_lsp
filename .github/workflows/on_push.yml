@@ -37,7 +37,7 @@ jobs:
     - name: MoveFile
       run: mv ./main ./build/mac/
 
-    - name: Commit files # commit the output folder
+    - name: Commit files1 # commit the output folder
       run: |
         git add .
         git commit -m "Added built mac go files"
@@ -46,11 +46,13 @@ jobs:
 
     - name: BuildWindows
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
+      continue-on-error: true
+
 
     - name: MoveFile
       run: mv ./main.exe ./build/windows/
     
-    - name: Commit files # commit the output folder
+    - name: Commit files2 # commit the output folder
       run: |
         git add .
         git commit -m "Added built windows go files"

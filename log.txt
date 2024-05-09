@@ -1,8 +1,44 @@
-[myfirstlsp]2024/05/09 01:42:11 main.go:21: I started
-[myfirstlsp]2024/05/09 01:42:11 main.go:42: recieved msg with method: initialize
-[myfirstlsp]2024/05/09 01:42:11 main.go:180: Creating temp folder
-[myfirstlsp]2024/05/09 01:42:11 main.go:188: Creating GitIgnore
-[myfirstlsp]2024/05/09 01:42:11 main.go:194: Writing to gitignore
-[myfirstlsp]2024/05/09 01:42:11 main.go:54: Connected to Neovim 0.9.5
-[myfirstlsp]2024/05/09 01:42:11 main.go:62: sent reply
-[myfirstlsp]2024/05/09 01:42:11 main.go:42: recieved msg with method: initialized
+[myfirstlsp]2024/05/09 01:48:47 main.go:21: I started
+[myfirstlsp]2024/05/09 01:48:47 main.go:42: recieved msg with method: initialize
+[myfirstlsp]2024/05/09 01:48:47 main.go:180: Creating temp folder
+[myfirstlsp]2024/05/09 01:48:47 main.go:188: Creating GitIgnore
+[myfirstlsp]2024/05/09 01:48:47 main.go:194: Writing to gitignore
+[myfirstlsp]2024/05/09 01:48:47 main.go:54: Connected to Neovim 0.9.5
+[myfirstlsp]2024/05/09 01:48:47 main.go:62: sent reply
+[myfirstlsp]2024/05/09 01:48:47 main.go:42: recieved msg with method: initialized
+[myfirstlsp]2024/05/09 01:48:47 main.go:42: recieved msg with method: textDocument/didOpen
+[myfirstlsp]2024/05/09 01:48:47 main.go:69: Opened: file:///Users/roberthorbury/Documents/projects_2024/databricks_dependency_documentation/sample_notebooks/my_normal_notebook.py
+[myfirstlsp]2024/05/09 01:48:47 state.go:68: /Users/roberthorbury/miniconda3/bin/mypy
+[myfirstlsp]2024/05/09 01:48:47 state.go:482: Getting Type Res::
+[myfirstlsp]2024/05/09 01:48:47 state.go:484: ./.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py
+[myfirstlsp]2024/05/09 01:48:47 state.go:498: .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:30:1: error: Name "e" is not defined  [name-defined]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:32:1: error: Name "prnt" is not defined  [name-defined]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:33:7: error: Name "hi" is not defined  [name-defined]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:36:1: error: Name "testFunc" is used before definition  [used-before-def]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:42:1: error: Too many arguments for "testFunc"  [call-arg]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:44:1: error: Name "spark" is not defined  [name-defined]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:46:1: error: Name "dbutils" is not defined  [name-defined]
+Found 7 errors in 1 file (checked 1 source file)
+
+[myfirstlsp]2024/05/09 01:48:47 state.go:128: .customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:5:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:5:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:28:12: E712 Avoid equality comparisons to `False`; use `if not True:` for false checks
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:28:12: E712 Avoid equality comparisons to `True`; use `if False:` for truth checks
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:29:5: F821 Undefined name `e`
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:30:1: F821 Undefined name `e`
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:32:1: F821 Undefined name `prnt`
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:33:7: F821 Undefined name `hi`
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:36:1: F821 Undefined name `testFunc`
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:44:1: F821 Undefined name `spark`
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:46:1: F821 Undefined name `dbutils`
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:30:1: error: Name "e" is not defined  [name-defined]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:32:1: error: Name "prnt" is not defined  [name-defined]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:33:7: error: Name "hi" is not defined  [name-defined]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:36:1: error: Name "testFunc" is used before definition  [used-before-def]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:42:1: error: Too many arguments for "testFunc"  [call-arg]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:44:1: error: Name "spark" is not defined  [name-defined]
+.customLsp/.tempFiles/.temp_file____Users_roberthorbury_Documents_projects_2024_databricks_dependency_documentation_sample_notebooks_my_normal_notebook.py:46:1: error: Name "dbutils" is not defined  [name-defined]
+[myfirstlsp]2024/05/09 01:48:47 main.go:42: recieved msg with method: textDocument/semanticTokens/full
+[myfirstlsp]2024/05/09 01:48:47 main.go:120: Responded
+[myfirstlsp]2024/05/09 01:48:48 main.go:42: recieved msg with method: shutdown
+[myfirstlsp]2024/05/09 01:48:48 main.go:158: Deleted: ./.customLsp/.tempFiles

@@ -46,12 +46,12 @@ func (s *State) CacheDocument(uri string) error {
 
 	doc := newDocument(s.Documents[uri])
 
-	err := os.WriteFile(fmt.Sprintf("%s.temp_%s", filePath, fileName), []byte(doc.contents), 0644)
+	err := os.WriteFile(fmt.Sprintf("%stemp_%s", filePath, fileName), []byte(doc.contents), 0644)
 
 	return err
 }
 
-func (s *State) LintDocument(uri string) error {
+func (s *State) LintDocument(uri string, logger *log.Logger) error {
 	execPath, err := exec.LookPath("ruff")
 	if err != nil {
 		return err
@@ -60,12 +60,35 @@ func (s *State) LintDocument(uri string) error {
 	filePath := GetTempPath()
 	fileName := GetTempFileName(uri)
 
-	linterRes, err := getLintedResults(execPath, fmt.Sprintf("%s.temp_%s", filePath, fileName))
+	linterRes, err := getLintedResults(execPath, fmt.Sprintf("%stemp_%s", filePath, fileName))
+	if err != nil {
+		return fmt.Errorf("Error: %s: linter Result: %s", err, linterRes)
+	}
+	execPath, err = exec.LookPath("mypy")
+	logger.Println(execPath)
+	if err != nil {
+		logger.Printf("Error in pyright: %s", err)
+		return err
+	}
+	typeRes, err := getTypeResults(execPath, fmt.Sprintf("%stemp_%s", filePath, fileName), logger)
 
 	if err != nil {
-		return fmt.Errorf("Error: %s: Linter Result: %s", err, linterRes)
+		return fmt.Errorf("Error: %s: type Result: %s", err, linterRes)
 	}
-	s.LinterResults[uri] = linterRes
+
+	lines := strings.Split(linterRes, "\n")
+	lines = append(lines, strings.Split(typeRes, "\n")...)
+	//lines := strings.Split(typeRes, "\n")
+
+	var pythonLines []string
+	for _, l := range lines {
+		if strings.Contains(l, ".py") {
+			pythonLines = append(pythonLines, l)
+		}
+	}
+
+	s.LinterResults[uri] = strings.Join(pythonLines, "\n")
+
 	return nil
 }
 
@@ -95,9 +118,100 @@ func (s *State) Hover(id int, uri string, position lsp.Position, logger *log.Log
 	return nil
 }
 
-func (s *State) PublishDiagnostics(uri string, logger *log.Logger) {
-	logger.Println(s.LinterResults[uri])
+func panicOnErr(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
 
+func (s *State) PublishDiagnostics(uri string, logger *log.Logger) *lsp.PublishDiagnosticNotification {
+	logger.Println(s.LinterResults[uri])
+	lines := strings.Split(s.LinterResults[uri], "\n")
+	var errorMsgs []errorMessage
+	var diagnostics []lsp.Diagnostic
+
+	isNotebook := strings.Contains(s.Documents[uri], "# Databricks notebook source")
+
+	for _, line := range lines {
+		if strings.Contains(line, ".py") {
+			errorStr := strings.Split(line, ".py:")
+			errorString := errorStr[len(errorStr)-1]
+			lineNo, err := strconv.Atoi(strings.Split(errorString, ":")[0])
+			panicOnErr(err)
+			char, err := strconv.Atoi(strings.Split(errorString, ":")[1])
+			panicOnErr(err)
+			errorString = strings.Join(strings.Split(errorString, ":")[2:], " ")
+
+			errorString = strings.Trim(errorString, " ")
+			errorWords := strings.Split(errorString, " ")
+
+			code := errorWords[0]
+			desc := strings.Join(errorWords[1:], " ")
+
+			severity := 3
+			if strings.Contains(code, "E") || strings.Contains(code, "warning") {
+				severity = 2
+			} else if strings.Contains(code, "F") || strings.Contains(code, "error") {
+				severity = 1
+			}
+
+			if !strings.Contains(desc, "[name-defined]") && (isNotebook && !strings.Contains(desc, "Undefined name `spark`") && !strings.Contains(desc, "Undefined name `dbutils`")) {
+				errorMsgs = append(errorMsgs, errorMessage{
+					line:     lineNo,
+					char:     char,
+					code:     code,
+					desc:     desc,
+					source:   "Ruff",
+					severity: severity,
+				})
+			}
+		}
+	}
+
+	for _, msg := range errorMsgs {
+		diagnostics = append(diagnostics, lsp.Diagnostic{
+			Range: lsp.Range{
+				StartPosition: lsp.Position{
+					Line:      msg.line - 1,
+					Character: 0},
+				EndPosition: lsp.Position{
+					Line:      msg.line - 1,
+					Character: 1001},
+			},
+			Severity: msg.severity,
+			Code:     msg.code,
+			Source:   msg.source,
+			Message:  msg.desc,
+		})
+
+	}
+
+	response := lsp.PublishDiagnosticNotification{
+		Notification: lsp.Notification{
+			RPC:    "2.0",
+			Method: "textDocument/publishDiagnostics",
+		},
+		Params: lsp.PublishDiagnosticParams{
+			URI:        uri,
+			Diagnostic: diagnostics,
+		},
+	}
+
+	return &response
+
+}
+
+func getPyRightResults(uri string, logger *log.Logger) {
+
+}
+
+type errorMessage struct {
+	line     int
+	char     int
+	code     string
+	desc     string
+	source   string
+	severity int
 }
 
 func (s *State) SemanticFormat(id int, uri string, logger *log.Logger) *lsp.SemanticTokenResponse {
@@ -355,6 +469,33 @@ func getLintedResults(execPath string, id string) (string, error) {
 		err = command.Run()
 	}
 
+	if fmt.Sprintf("%s", err) == "exit status 2" {
+		return out.String(), err
+
+	} else {
+		return out.String(), nil
+	}
+
+}
+
+func getTypeResults(execPath string, id string, logger *log.Logger) (string, error) {
+	logger.Println("Getting Type Res::")
+
+	logger.Println(id)
+
+	command := exec.Command(execPath, id, "--show-column-number")
+	// set var to get the output
+	var out bytes.Buffer
+
+	// set the output to our variable
+	command.Stdout = &out
+	err := command.Run()
+
+	if out.String() == "" {
+		command.Stderr = &out
+		err = command.Run()
+	}
+	logger.Println(out.String())
 	if fmt.Sprintf("%s", err) == "exit status 2" {
 		return out.String(), err
 

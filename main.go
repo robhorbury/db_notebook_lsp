@@ -73,12 +73,13 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 			logger.Printf("Error Caching: %s", err)
 		}
 
-		err = state.LintDocument(request.Params.TextDocument.URI)
+		err = state.LintDocument(request.Params.TextDocument.URI, logger)
 		if err != nil {
 			logger.Printf("Error Linting: %s", err)
 		}
 
-		state.PublishDiagnostics(request.Params.TextDocument.URI, logger)
+		response := state.PublishDiagnostics(request.Params.TextDocument.URI, logger)
+		writeResponse(writer, response)
 
 	case "textDocument/didChange":
 		var request lsp.DidChangeTextDocumentNotification
@@ -95,10 +96,14 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 				logger.Printf("Error Caching: %s", err)
 			}
 
-			err = state.LintDocument(request.Params.TextDocument.URI)
+			err = state.LintDocument(request.Params.TextDocument.URI, logger)
 			if err != nil {
 				logger.Printf("Error Linting: %s", err)
 			}
+
+			response := state.PublishDiagnostics(request.Params.TextDocument.URI, logger)
+			logger.Println("Published Diagnostics")
+			writeResponse(writer, response)
 
 		}
 
@@ -112,7 +117,7 @@ func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, m
 
 		if response != nil {
 			writeResponse(writer, response)
-			logger.Printf("Responded : %s", *response)
+			logger.Println("Responded")
 		}
 
 	case "textDocument/hover":

@@ -231,6 +231,7 @@ func (s *State) SemanticFormat(id int, uri string, logger *log.Logger) *lsp.Sema
 
 			allTokenList := findTokenInCell(cell, cellStartLineNo[i], logger)
 			stringTokenList := CreateStringTokens(cell, cellStartLineNo[i], "\"", logger)
+			stringTokenList = append(stringTokenList, CreateStringTokens(cell, cellStartLineNo[i], "'", logger)...)
 			tokenList = append(tokenList, mergeTokenLists(allTokenList, stringTokenList)...)
 			//tokenList = append(tokenList, stringTokenList...)
 		}

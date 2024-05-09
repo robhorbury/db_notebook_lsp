@@ -39,14 +39,4 @@ jobs:
         git commit -m "Added built go files"
         git push origin ${{ steps.extract_branch.outputs.branch }}
 
-    - name: Make binary executable
-      run: chmod +x ./db_dependency_logger
 
-    - name: Log Dependencies
-      run: ./db_dependency_logger 
-
-    - name: Commit files # commit the output folder
-      run: |
-        git add .
-        git commit -m "Automatically updated Databricks dependencies" || exit 0
-        git push origin ${{ steps.extract_branch.outputs.branch }}

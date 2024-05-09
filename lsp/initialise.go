@@ -45,7 +45,7 @@ func NewInitialiseResponse(id int) InitialiseResponse {
 		Result: InitialiseResult{
 			Capabilities: ServerCapabilities{
 				TextDocumentSync: 1,
-				HoverProvider:    true,
+				HoverProvider:    false,
 				SemanticTokensProvider: SematicTokensOptions{
 					Legend: SemanticTokensLegend{
 						TokenTypes:     []string{"namespace", "property", "method", "string"},

@@ -755,3 +755,6 @@ Found 7 errors in 1 file (checked 1 source file)
 [myfirstlsp]2024/05/09 21:20:23 main.go:42: recieved msg with method: textDocument/semanticTokens/full
 [myfirstlsp]2024/05/09 21:20:23 main.go:120: Responded
 [myfirstlsp]2024/05/09 21:20:26 main.go:42: recieved msg with method: textDocument/didSave
+[myfirstlsp]2024/05/09 21:20:50 main.go:42: recieved msg with method: textDocument/hover
+[myfirstlsp]2024/05/09 21:20:50 state.go:103: Errors Message:  F821 Undefined name `prnt`
+[myfirstlsp]2024/05/09 21:21:02 main.go:42: recieved msg with method: textDocument/didSave

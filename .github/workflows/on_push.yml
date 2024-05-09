@@ -29,13 +29,13 @@ jobs:
       run: env GOOS=darwin GOARCH=amd64 go build ./main.go
 
     - name: MoveFile
-      run: mv main.go build/mac
+      run: mv ./main ./build/mac
 
     - name: BuildWindows
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
 
     - name: MoveFile
-      run: mv main.go build/windows
+      run: mv ./main ./build/windows
 
 
     - name: setup git config

@@ -35,7 +35,7 @@ jobs:
       run: env GOOS=darwin GOARCH=amd64 go build ./main.go
 
     - name: MoveFile
-      run: mv ./main ./build/mac
+      run: mv ./main ./build/mac/
 
     - name: Commit files # commit the output folder
       run: |
@@ -48,7 +48,7 @@ jobs:
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
 
     - name: MoveFile
-      run: mv ./main.exe ./build/windows
+      run: mv ./main.exe ./build/windows/
     
     - name: Commit files # commit the output folder
       run: |

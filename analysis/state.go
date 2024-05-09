@@ -46,7 +46,7 @@ func (s *State) CacheDocument(uri string) error {
 
 	doc := newDocument(s.Documents[uri])
 
-	err := os.WriteFile(fmt.Sprintf("%stemp_%s", filePath, fileName), []byte(doc.contents), 0644)
+	err := os.WriteFile(fmt.Sprintf("%s.temp_%s", filePath, fileName), []byte(doc.contents), 0644)
 
 	return err
 }
@@ -60,7 +60,7 @@ func (s *State) LintDocument(uri string, logger *log.Logger) error {
 	filePath := GetTempPath()
 	fileName := GetTempFileName(uri)
 
-	linterRes, err := getLintedResults(execPath, fmt.Sprintf("%stemp_%s", filePath, fileName))
+	linterRes, err := getLintedResults(execPath, fmt.Sprintf("%s.temp_%s", filePath, fileName))
 	if err != nil {
 		return fmt.Errorf("Error: %s: linter Result: %s", err, linterRes)
 	}
@@ -70,7 +70,7 @@ func (s *State) LintDocument(uri string, logger *log.Logger) error {
 		logger.Printf("Error in pyright: %s", err)
 		return err
 	}
-	typeRes, err := getTypeResults(execPath, fmt.Sprintf("%stemp_%s", filePath, fileName), logger)
+	typeRes, err := getTypeResults(execPath, fmt.Sprintf("%s.temp_%s", filePath, fileName), logger)
 
 	if err != nil {
 		return fmt.Errorf("Error: %s: type Result: %s", err, linterRes)

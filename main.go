@@ -16,6 +16,10 @@ import (
 )
 
 func main() {
+	err := os.MkdirAll("./.customLsp/.tempFiles/", os.ModePerm)
+	if err != nil {
+		panic(err)
+	}
 	logger := getLogger("./.customLsp/log.txt")
 	logger.Println("I started")
 	defer printError(logger)

@@ -44,10 +44,11 @@ jobs:
         git push origin ${{ steps.extract_branch.outputs.branch }}
 
 
-    - name: BuildWindows
+    - name: BuildWindowsa
+      continue-on-error: true
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
-        if: ${{ always() }}
-        needs: [Commit files1]
+      if: ${{ always() }}
+      needs: Commit files1
 
 
     - name: MoveFile

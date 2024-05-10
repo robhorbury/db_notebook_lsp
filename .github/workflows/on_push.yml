@@ -46,8 +46,8 @@ jobs:
 
     - name: BuildWindows
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
-      if: ${{ always() }}
-      needs: [Commit files1]
+        if: ${{ always() }}
+        needs: [Commit files1]
 
 
     - name: MoveFile

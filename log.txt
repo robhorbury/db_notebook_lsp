@@ -1,10 +1,8 @@
-[myfirstlsp]2024/05/10 01:12:24 main.go:21: I started
-[myfirstlsp]2024/05/10 01:12:24 main.go:42: recieved msg with method: initialize
-[myfirstlsp]2024/05/10 01:12:24 main.go:180: Creating temp folder
-[myfirstlsp]2024/05/10 01:12:24 main.go:188: Creating GitIgnore
-[myfirstlsp]2024/05/10 01:12:24 main.go:194: Writing to gitignore
-[myfirstlsp]2024/05/10 01:12:24 main.go:54: Connected to Neovim 0.9.5
-[myfirstlsp]2024/05/10 01:12:24 main.go:62: sent reply
-[myfirstlsp]2024/05/10 01:12:24 main.go:42: recieved msg with method: initialized
-[myfirstlsp]2024/05/10 01:13:36 main.go:42: recieved msg with method: shutdown
-[myfirstlsp]2024/05/10 01:13:36 main.go:158: Deleted: ./.customLsp/.tempFiles
+[myfirstlsp]2024/05/10 12:16:36 main.go:21: I started
+[myfirstlsp]2024/05/10 12:16:36 main.go:42: recieved msg with method: initialize
+[myfirstlsp]2024/05/10 12:16:36 main.go:180: Creating temp folder
+[myfirstlsp]2024/05/10 12:16:36 main.go:188: Creating GitIgnore
+[myfirstlsp]2024/05/10 12:16:36 main.go:194: Writing to gitignore
+[myfirstlsp]2024/05/10 12:16:36 main.go:54: Connected to Neovim 0.9.5
+[myfirstlsp]2024/05/10 12:16:36 main.go:62: sent reply
+[myfirstlsp]2024/05/10 12:16:36 main.go:42: recieved msg with method: initialized

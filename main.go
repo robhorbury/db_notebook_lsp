@@ -16,9 +16,9 @@ import (
 )
 
 func main() {
-
-	logger := getLogger("/Users/roberthorbury/Documents/myfirstlsp/log.txt")
+	logger := getLogger("./.customLsp/log.txt")
 	logger.Println("I started")
+	defer printError(*logger)
 
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(rpc.Split)
@@ -37,6 +37,15 @@ func main() {
 		handleMessage(logger, writer, state, method, contents)
 	}
 }
+
+func printError(logger *log.Logger){
+	r:= recover()
+
+	if r := nil {
+		logger.Println(r)
+		panic(r)
+	}
+} 
 
 func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, method string, contents []byte) {
 	logger.Printf("recieved msg with method: %s", method)

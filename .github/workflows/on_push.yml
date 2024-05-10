@@ -40,12 +40,12 @@ jobs:
     - name: Commit files1 # commit the output folder
       run: |
         git add .
-        git commit -m "Added built mac go files"
+        git commit -m "Added built mac go files" || true
         git push origin ${{ steps.extract_branch.outputs.branch }}
 
 
     - name: BuildWindowsa
-      continue-on-error: true
+ 
       run: env GOOS=windows GOARCH=amd64 go build ./main.go
 
 
@@ -55,7 +55,7 @@ jobs:
     - name: Commit files2 # commit the output folder
       run: |
         git add .
-        git commit -m "Added built windows go files"
+        git commit -m "Added built windows go files" || true
         git push origin ${{ steps.extract_branch.outputs.branch }}
 
 
